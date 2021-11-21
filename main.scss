@@ -2,170 +2,323 @@
 * {
     font-family: "Titillium Web", sans-serif;
 }
-
-.calculator {
+body {
     background-color: honeydew;
     display: flex;
     justify-content: center;
 }
-.cal {
-    width: 220px;
-    border: 2px solid rgb(230, 151, 151);
-    background-color: rgb(250, 223, 223);
-    box-shadow: inset -3px -3px 0 rgb(189, 159, 159);
-    border-radius: 35px;
-    padding: 5px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-areas:
-        "heading heading heading heading"
-        "four-span four-span four-span four-span"
-        "four-span-two four-span-two four-span-two four-span-two"
-        "ac ac del del"
-        "one two three divide"
-        "four five six multiple"
-        "seven eight nine minus"
-        "period zeroo equal plus";
-    gap: 0px;
-    &--heading {
-        text-align: center;
-        grid-area: heading;
-        color: lightsalmon;
-        text-shadow: 2px 2px rgb(212, 111, 70);
-        margin: 0;
-    }
-    &--display {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-        width: 200px;
-        height: 60px;
-        grid-column: 1/-1;
-        display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 5px;
-        border: 3px solid rgb(163, 65, 98);
-        background-color: hsl(0, 2%, 72%);
-        box-shadow: inset -1px -2px 0 rgb(75, 73, 73);
+.calculator {
+    .cal {
+        gap: 0px;
+        width: 230px;
+        border: 2px solid rgb(230, 151, 151);
+        background-color: rgb(250, 223, 223);
+        box-shadow: inset -3px -3px 0 rgb(189, 159, 159);
+        border-radius: 35px;
+        padding: 15px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-areas:
+            "heading heading heading heading"
+            "four-span four-span four-span four-span"
+            "four-span-two four-span-two four-span-two four-span-two"
+            "ac ac del del"
+            "one two three divide"
+            "four five six multiple"
+            "seven eight nine minus"
+            "period zeroo equal plus";
+        &--heading {
+            text-align: center;
+            grid-area: heading;
+            color: lightsalmon;
+            text-shadow: 2px 2px rgb(212, 111, 70);
+            margin: 0;
+        }
+        &--display {
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            width: 220px;
+            height: 90px;
+            grid-column: 1/-1;
+            display: flex;
 
-        &__first-input {
-            font-size: 1rem;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 5px;
+            border: 3px solid rgb(163, 65, 98);
+            background-color: hsl(0, 2%, 72%);
+            box-shadow: inset -1px -2px 0 rgb(75, 73, 73);
+
+            &__first-input {
+                font-size: 1rem;
+                text-align: right;
+            }
+            &__second-input {
+                font-size: 2rem;
+                text-align: right;
+            }
+
+            &__last-input {
+                font-size: 1rem;
+                text-align: left;
+            }
         }
-        &__last-input {
-            font-size: 2rem;
-        }
-    }
-    &--btn {
-        &__one {
-            grid-area: one;
-            border: 2px solid hsl(352, 92%, 85%);
-            background-color: hsl(353, 90%, 88%);
-            box-shadow: inset -0.5px -3px 0 hsl(353, 28%, 70%);
-        }
-        &__two {
-            grid-area: two;
-            border: 1px solid rgb(253, 113, 63);
-            background-color: coral;
-            box-shadow: inset -0.5px -3px 0 rgb(190, 95, 61);
-        }
-        &__three {
-            grid-area: three;
-            border: 1px solid rgb(231, 100, 150);
-            background-color: rgb(233, 98, 143);
-            box-shadow: inset -1px -3px 0 rgb(179, 75, 109);
-        }
-        &__four {
-            grid-area: four;
-            border: 1px solid rgb(247, 209, 214);
-            background-color: rgb(247, 223, 226);
-            box-shadow: inset -1px -3px 0 hsl(352, 53%, 80%);
-        }
-        &__five {
-            grid-area: five;
-            border: 1px solid rgb(231, 133, 149);
-            background-color: rgb(228, 172, 179);
-            box-shadow: inset -1px -3px 0 rgb(197, 114, 127);
-        }
-        &__six {
-            grid-area: six;
-            border: 1px solid rgba(247, 168, 217, 0.89);
-            background-color: rgba(255, 190, 230, 0.89);
-            box-shadow: inset -1px -3px 0 rgba(192, 131, 169, 0.89);
-        }
-        &__seven {
-            grid-area: seven;
-            border: 1px solid rgba(211, 142, 184, 0.89);
-            background-color: rgba(236, 182, 216, 0.89);
-            box-shadow: inset -1px -3px 0 rgba(182, 141, 167, 0.89);
-        }
-        &__eight {
-            grid-area: eight;
-            border: 1px solid rgba(255, 216, 190, 0.89);
-            background-color: rgba(250, 228, 214, 0.89);
-            box-shadow: inset -1px -3px 0 hsl(352, 53%, 80%);
-        }
-        &__nine {
-            grid-area: nine;
-            border: 1px solid rgb(230, 189, 194);
-            background-color: rgb(240, 188, 195);
-            box-shadow: inset -1px -3px 0 rgb(199, 155, 161);
-        }
-        &__zero {
-            grid-area: zeroo;
-            border: 1px solid rgb(234, 235, 207);
-            background-color: rgb(244, 245, 230);
-            box-shadow: inset -1px -3px 0 rgb(175, 175, 156);
-        }
-        &__decimal {
-            grid-area: period;
-            border: 1px solid rgb(219, 157, 134);
-            background-color: rgb(241, 193, 175);
-            box-shadow: inset -1px -3px 0 rgb(189, 135, 115);
-        }
-        &__equal {
-            grid-area: equal;
-            border: 1px solid grey;
-            background-color: rgb(153, 153, 153);
-            box-shadow: inset -1px -3px 0 rgb(99, 98, 98);
-        }
-        &__plus {
-            grid-area: plus;
-            border: 1px solid plum;
-            background-color: rgb(235, 187, 235);
-            box-shadow: inset -1px -3px 0 rgb(177, 128, 177);
-        }
-        &__minus {
-            grid-area: minus;
-            border: 1px solid rgb(231, 133, 149);
-            background-color: rgb(240, 161, 174);
-            box-shadow: inset -1px -3px 0 rgb(185, 106, 119);
-        }
-        &__divide {
-            grid-area: divide;
-            border: 1px solid rgb(236, 153, 147);
-            background-color: rgb(240, 177, 172);
-            box-shadow: inset -1px -3px 0 rgb(192, 124, 119);
-        }
-        &__multiply {
-            grid-area: multiple;
-            border: 1px solid rgb(236, 111, 102);
-            background-color: rgb(243, 146, 139);
-            box-shadow: inset -1px -3px 0 rgb(194, 92, 85);
-        }
-        &__del {
-            grid-area: del;
-            border: 1px solid rgb(224, 129, 224);
-            background-color: rgb(226, 180, 226);
-            box-shadow: inset -1px -3px 0 rgb(116, 69, 116);
-        }
-        &__ac {
-            grid-area: ac;
-            border: 1px solid rgb(211, 139, 98);
-            background-color: rgb(235, 177, 144);
-            box-shadow: inset -1px -3px 0 rgb(173, 115, 81);
+        &--btn {
+            gap: 7px;
+            width: 250px;
+            margin-left: 0;
+            padding: 5px;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-areas:
+                "type type type type"
+                "ac ac del del"
+                "one two three divide"
+                "four five six multiple"
+                "seven eight nine minus"
+                "period zeroo equal plus";
+            &__one {
+                grid-area: one;
+                border: 2px solid hsl(352, 92%, 85%);
+                background-color: hsl(353, 90%, 88%);
+                box-shadow: inset -0.5px -3px 0 hsl(353, 28%, 70%);
+                &:hover {
+                    background: darken(hsl(353, 90%, 88%), 1.5%);
+                    color: lighten(hsl(352, 92%, 85%), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(hsl(352, 92%, 85%), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+
+            &__two {
+                grid-area: two;
+                border: 1px solid rgb(253, 113, 63);
+                background-color: rgb(253, 113, 63);
+                box-shadow: inset -0.5px -3px 0 rgb(190, 95, 61);
+                &:hover {
+                    background: darken(rgb(253, 113, 63), 1.5%);
+                    color: lighten(hsl(352, 92%, 85%), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(hsl(352, 92%, 85%), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__three {
+                grid-area: three;
+                border: 1px solid rgb(231, 100, 150);
+                background-color: rgb(233, 98, 143);
+                box-shadow: inset -1px -3px 0 rgb(179, 75, 109);
+                &:hover {
+                    background: darken(rgb(231, 100, 150), 1.5%);
+                    color: lighten(hsl(352, 92%, 85%), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(231, 100, 150), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__four {
+                grid-area: four;
+                border: 1px solid rgb(247, 209, 214);
+                background-color: rgb(247, 223, 226);
+                box-shadow: inset -1px -3px 0 hsl(352, 53%, 80%);
+
+                &:hover {
+                    background: darken(rgb(247, 209, 214), 1.5%);
+                    color: lighten(rgb(247, 209, 214), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(247, 223, 226), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__five {
+                grid-area: five;
+                border: 1px solid rgb(231, 133, 149);
+                background-color: rgb(228, 172, 179);
+                box-shadow: inset -1px -3px 0 rgb(197, 114, 127);
+                &:hover {
+                    background: darken(rgb(228, 172, 179), 1.5%);
+                    color: lighten(rgb(228, 172, 179), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(228, 172, 179), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__six {
+                grid-area: six;
+                border: 1px solid rgba(247, 168, 217, 0.89);
+                background-color: rgba(255, 190, 230, 0.89);
+                box-shadow: inset -1px -3px 0 rgba(192, 131, 169, 0.89);
+                &:hover {
+                    background: darken(rgba(255, 190, 230, 0.89), 1.5%);
+                    color: lighten(rgba(255, 190, 230, 0.89), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgba(255, 190, 230, 0.89), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__seven {
+                grid-area: seven;
+                border: 1px solid rgba(211, 142, 184, 0.89);
+                background-color: rgba(236, 182, 216, 0.89);
+                box-shadow: inset -1px -3px 0 rgba(182, 141, 167, 0.89);
+                &:hover {
+                    background: darken(rgba(236, 182, 216, 0.89), 1.5%);
+                    color: lighten(rgba(236, 182, 216, 0.89), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgba(236, 182, 216, 0.89), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__eight {
+                grid-area: eight;
+                border: 1px solid rgba(255, 216, 190, 0.89);
+                background-color: rgba(250, 228, 214, 0.89);
+                box-shadow: inset -1px -3px 0 hsl(352, 53%, 80%);
+                &:hover {
+                    background: darken(rgba(250, 228, 214, 0.89), 1.5%);
+                    color: lighten(rgba(250, 228, 214, 0.89), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgba(250, 228, 214, 0.89), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__nine {
+                grid-area: nine;
+                border: 1px solid rgb(230, 189, 194);
+                background-color: rgb(240, 188, 195);
+                box-shadow: inset -1px -3px 0 rgb(199, 155, 161);
+                &:hover {
+                    background: darken(rgb(240, 188, 195), 1.5%);
+                    color: lighten(rgb(240, 188, 195), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(240, 188, 195), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__zero {
+                grid-area: zeroo;
+                border: 1px solid rgb(234, 235, 207);
+                background-color: rgb(244, 245, 230);
+                box-shadow: inset -1px -3px 0 rgb(175, 175, 156);
+                &:hover {
+                    background: darken(rgb(244, 245, 230), 1.5%);
+                    color: lighten(rgb(244, 245, 230), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(244, 245, 230), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__decimal {
+                grid-area: period;
+                border: 1px solid rgb(219, 157, 134);
+                background-color: rgb(241, 193, 175);
+                box-shadow: inset -1px -3px 0 rgb(189, 135, 115);
+                &:hover {
+                    background: darken(rgb(241, 193, 175), 1.5%);
+                    color: lighten(rgb(241, 193, 175), 18%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(241, 193, 175), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__equal {
+                grid-area: equal;
+                border: 1px solid grey;
+                background-color: rgb(153, 153, 153);
+                box-shadow: inset -1px -3px 0 rgb(99, 98, 98);
+                &:hover {
+                    background: darken(rgb(153, 153, 153), 1.5%);
+                    color: lighten(rgb(153, 153, 153), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(153, 153, 153), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__plus {
+                grid-area: plus;
+                border: 1px solid plum;
+                background-color: rgb(235, 187, 235);
+                box-shadow: inset -1px -3px 0 rgb(177, 128, 177);
+                &:hover {
+                    background: darken(rgb(235, 187, 235), 1.5%);
+                    color: lighten(rgb(235, 187, 235), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(235, 187, 235), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__minus {
+                grid-area: minus;
+                border: 1px solid rgb(231, 133, 149);
+                background-color: rgb(240, 161, 174);
+                box-shadow: inset -1px -3px 0 rgb(185, 106, 119);
+                &:hover {
+                    background: darken(rgb(240, 161, 174), 1.5%);
+                    color: lighten(rgb(240, 161, 174), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(240, 161, 174), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__divide {
+                grid-area: divide;
+                border: 1px solid rgb(236, 153, 147);
+                background-color: rgb(240, 177, 172);
+                box-shadow: inset -1px -3px 0 rgb(192, 124, 119);
+                &:hover {
+                    background: darken(rgb(240, 177, 172), 1.5%);
+                    color: lighten(rgb(240, 177, 172), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(240, 177, 172), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__multiply {
+                grid-area: multiple;
+                border: 1px solid rgb(236, 111, 102);
+                background-color: rgb(243, 146, 139);
+                box-shadow: inset -1px -3px 0 rgb(194, 92, 85);
+                &:hover {
+                    background: darken(rgb(243, 146, 139), 1.5%);
+                    color: lighten(rgb(243, 146, 139), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(243, 146, 139), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__del {
+                grid-area: del;
+                border: 1px solid rgb(224, 129, 224);
+                background-color: rgb(226, 180, 226);
+                box-shadow: inset -1px -3px 0 rgb(116, 69, 116);
+                &:hover {
+                    background: darken(rgb(226, 180, 226), 1.5%);
+                    box-shadow: 1px 1px 2px rgba(#fff, 0.2);
+                    color: lighten(rgb(226, 180, 226), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(226, 180, 226), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
+            &__ac {
+                grid-area: ac;
+                border: 1px solid rgb(211, 139, 98);
+                background-color: rgb(235, 177, 144);
+                box-shadow: inset -1px -3px 0 rgb(173, 115, 81);
+                &:hover {
+                    background: darken(rgb(235, 177, 144), 1.5%);
+                    box-shadow: 1px 1px 2px rgba(#fff, 0.2);
+                    color: lighten(rgb(235, 177, 144), 100%);
+                    text-decoration: none;
+                    text-shadow: -1px -1px 0 darken(rgb(235, 177, 144), 9.5%);
+                    transition: all 250ms linear;
+                }
+            }
         }
     }
 }
@@ -174,14 +327,14 @@ button {
     text-shadow: 1px 1px rgb(109, 108, 108);
     color: black;
 
-    width: 50px;
-    height: 50px;
+    width: 53px;
+    height: 53px;
     border-radius: 50%;
     font-weight: 500;
     padding: 0;
 }
-#two-span {
+.two-span {
     border-radius: 30px;
-    width: 100px;
+    width: 110px;
     height: 50px;
 }

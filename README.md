@@ -1,6 +1,8 @@
 # Calculator
 ## Simple Calculator Using JavaScript, HTML and SCSS.
 
+https://jay-yoon10.github.io/Calculator/
+
 ***
 ### 1. Initial Screen
 ***

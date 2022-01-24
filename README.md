@@ -1,5 +1,5 @@
 # Calculator
-## Simple Calculator Using JavaScript, HTML and SCSS.
+Simple arithmetic calculator Using JavaScript, HTML and SCSS.
 
 https://jay-yoon10.github.io/Calculator/
 

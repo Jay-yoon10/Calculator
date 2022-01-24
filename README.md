@@ -3,7 +3,7 @@
 
 ### 1. Initial Screen
 
-![initial](https://github.com/Jay-yoon10/Calculator/issues/1#issue-1112434584)
+![Calculator](https://user-images.githubusercontent.com/93105607/150764419-12e3104c-d30a-4cf1-8442-455a2db2ee5d.JPG)
 
 ### 2. Function
 ####  Simple Arithmetic Operation
